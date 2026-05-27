@@ -7,7 +7,7 @@
 <title>КДС — Служба дезинсекции | Екатеринбург и область</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
   --navy: #1a2744;
@@ -26,7 +26,7 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Mulish', sans-serif;
   background: var(--white);
   color: var(--navy);
   overflow-x: hidden;
@@ -34,11 +34,11 @@ body {
 
 /* ─── UTILITY ─────────────────────────────────── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.tag { display: inline-block; font-family: 'Oswald', sans-serif; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; padding: 4px 12px; border: 1.5px solid var(--red); color: var(--red); border-radius: 2px; margin-bottom: 12px; }
-.section-title { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.1; letter-spacing: -.01em; }
+.tag { display: inline-block; font-family: 'Unbounded', sans-serif; font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; padding: 5px 14px; border: 1.5px solid var(--red); color: var(--red); border-radius: 2px; margin-bottom: 18px; }
+.section-title { font-family: 'Unbounded', sans-serif; font-size: clamp(1.25rem, 2.6vw, 1.9rem); font-weight: 900; line-height: 1.15; letter-spacing: -.03em; }
 .section-title span { color: var(--red); }
-.section-sub { font-size: 1.05rem; color: var(--gray); margin-top: 12px; line-height: 1.65; }
-.btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: 14px 28px; border-radius: 4px; text-decoration: none; transition: all .25s; cursor: pointer; border: none; }
+.section-sub { font-size: 1rem; color: var(--gray); margin-top: 14px; line-height: 1.7; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Unbounded', sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 14px 28px; border-radius: 4px; text-decoration: none; transition: all .25s; cursor: pointer; border: none; }
 .btn-primary { background: var(--red); color: var(--white); }
 .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,32,42,.35); }
 .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.5); }
@@ -77,18 +77,18 @@ body {
 .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 .logo-icon { width: 52px; height: 52px; flex-shrink: 0; }
 .logo-text { display: flex; flex-direction: column; }
-.logo-name { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--white); letter-spacing: .04em; line-height: 1; }
+.logo-name { font-family: 'Unbounded', sans-serif; font-size: .95rem; font-weight: 800; color: var(--white); letter-spacing: -.02em; line-height: 1; }
 .logo-name span { color: var(--red); }
 .logo-sub { font-size: .65rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-top: 3px; }
 nav { display: flex; align-items: center; gap: 6px; }
-nav a { font-family: 'Oswald', sans-serif; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.7); text-decoration: none; padding: 8px 12px; border-radius: 3px; transition: color .2s, background .2s; }
+nav a { font-family: 'Unbounded', sans-serif; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7); text-decoration: none; padding: 8px 12px; border-radius: 3px; transition: color .2s, background .2s; }
 nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
-.header-cta { font-size: .82rem; padding: 10px 20px; }
+.header-cta { font-size: .62rem; padding: 11px 20px; }
 .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
 .burger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all .3s; }
 .mobile-menu { display: none; position: fixed; top: 80px; left: 0; right: 0; background: var(--navy-dark); padding: 16px 24px; z-index: 998; border-top: 1px solid rgba(255,255,255,.1); }
 .mobile-menu.open { display: block; }
-.mobile-menu a { display: block; font-family: 'Oswald', sans-serif; font-size: 1.1rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.8); text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+.mobile-menu a { display: block; font-family: 'Unbounded', sans-serif; font-size: 1.1rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.8); text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
 .mobile-menu a:hover { color: var(--white); }
 .mobile-menu .btn { margin-top: 16px; width: 100%; justify-content: center; }
 
@@ -130,14 +130,14 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(232,32,42,.5)} 50%{box-shadow:0 0 0 8px rgba(232,32,42,0)} }
 .hero-badge span { font-size: .8rem; color: rgba(255,255,255,.8); letter-spacing: .04em; }
 .hero-title {
-  font-family: 'Oswald', sans-serif;
-  font-size: clamp(2.6rem, 6vw, 4.8rem);
-  font-weight: 700; color: var(--white);
-  line-height: 1.05; letter-spacing: -.01em;
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  font-weight: 900; color: var(--white);
+  line-height: 1.1; letter-spacing: -.04em;
   margin-bottom: 20px;
 }
 .hero-title .accent { color: var(--red); display: block; }
-.hero-desc { font-size: 1.1rem; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 36px; max-width: 480px; }
+.hero-desc { font-size: 1rem; color: rgba(255,255,255,.65); line-height: 1.75; margin-bottom: 36px; max-width: 480px; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
 .hero-phone {
   display: flex; align-items: center; gap: 10px;
@@ -147,14 +147,16 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 }
 .hero-phone:hover { border-color: rgba(255,255,255,.4); }
 .hero-phone-icon { color: var(--red); font-size: 1.2rem; }
-.hero-phone-num { font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--white); letter-spacing: .02em; }
-.hero-phone-label { font-size: .75rem; color: rgba(255,255,255,.4); }
-.hero-stats { display: flex; gap: 32px; }
+.hero-phone-num { font-family: 'Unbounded', sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); letter-spacing: -.01em; }
+.hero-phone-label { font-size: .72rem; color: rgba(255,255,255,.4); }
+.hero-stats { display: flex; gap: 28px; }
 .stat-item { border-left: 3px solid var(--red); padding-left: 16px; }
-.stat-num { font-family: 'Oswald', sans-serif; font-size: 2rem; font-weight: 700; color: var(--white); line-height: 1; }
-.stat-label { font-size: .8rem; color: rgba(255,255,255,.45); margin-top: 4px; letter-spacing: .02em; }
+.stat-num { font-family: 'Unbounded', sans-serif; font-size: 1.6rem; font-weight: 900; color: var(--white); line-height: 1; }
+.stat-label { font-size: .75rem; color: rgba(255,255,255,.45); margin-top: 6px; }
 .hero-visual { display: flex; justify-content: center; align-items: center; }
-.hero-logo-big { width: min(380px, 100%); filter: drop-shadow(0 20px 60px rgba(0,0,0,.5)); }
+.hero-logo-frame { position: relative; display: flex; justify-content: center; align-items: center; }
+.hero-logo-big { width: min(360px, 100%); border-radius: 24px; box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 32px 80px rgba(0,0,0,.6); }
+.hero-logo-glow { position: absolute; inset: -20px; border-radius: 32px; background: radial-gradient(ellipse at center, rgba(232,32,42,.18) 0%, transparent 70%); z-index: -1; pointer-events: none; }
 .hero-scroll { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,.3); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
 .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,.3), transparent); animation: scrollLine 2s ease-in-out infinite; }
 @keyframes scrollLine { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
@@ -178,9 +180,9 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 .service-icon { width: 60px; height: 60px; background: var(--light); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: background .3s; }
 .service-card:hover .service-icon { background: rgba(232,32,42,.1); }
 .service-icon svg { width: 30px; height: 30px; }
-.service-name { font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; }
+.service-name { font-family: 'Unbounded', sans-serif; font-size: .85rem; font-weight: 700; margin-bottom: 12px; }
 .service-desc { font-size: .9rem; color: var(--gray); line-height: 1.6; }
-.service-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-size: .82rem; color: var(--red); text-decoration: none; letter-spacing: .04em; text-transform: uppercase; margin-top: 16px; }
+.service-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Unbounded', sans-serif; font-size: .82rem; color: var(--red); text-decoration: none; letter-spacing: .04em; text-transform: uppercase; margin-top: 16px; }
 .service-link svg { width: 14px; height: 14px; transition: transform .2s; }
 .service-link:hover svg { transform: translateX(4px); }
 
@@ -193,7 +195,7 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 .why-item { display: flex; gap: 16px; align-items: flex-start; }
 .why-icon { width: 44px; height: 44px; border-radius: 8px; background: rgba(232,32,42,.15); border: 1px solid rgba(232,32,42,.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .why-icon svg { width: 20px; height: 20px; color: var(--red); }
-.why-item-text h4 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; color: var(--white); font-weight: 600; }
+.why-item-text h4 { font-family: 'Unbounded', sans-serif; font-size: .82rem; color: var(--white); font-weight: 700; }
 .why-item-text p { font-size: .88rem; color: rgba(255,255,255,.5); margin-top: 4px; line-height: 1.5; }
 .why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .why-card {
@@ -201,7 +203,7 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
   border-radius: 12px; padding: 28px 24px; transition: background .3s;
 }
 .why-card:hover { background: rgba(255,255,255,.08); }
-.why-card-num { font-family: 'Oswald', sans-serif; font-size: 2.8rem; font-weight: 700; color: var(--red); line-height: 1; }
+.why-card-num { font-family: 'Unbounded', sans-serif; font-size: 2rem; font-weight: 900; color: var(--red); line-height: 1; }
 .why-card-label { font-size: .9rem; color: rgba(255,255,255,.6); margin-top: 6px; line-height: 1.4; }
 
 /* ─── PROCESS ──────────────────────────────────── */
@@ -217,13 +219,13 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 .step-num {
   width: 56px; height: 56px; border-radius: 50%;
   background: var(--navy); color: var(--white);
-  font-family: 'Oswald', sans-serif; font-size: 1.3rem; font-weight: 700;
+  font-family: 'Unbounded', sans-serif; font-size: 1.3rem; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
   border: 3px solid var(--white); box-shadow: 0 4px 16px rgba(26,39,68,.2);
   margin-bottom: 20px;
 }
 .step:first-child .step-num { background: var(--red); }
-.step-title { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.step-title { font-family: 'Unbounded', sans-serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
 .step-desc { font-size: .82rem; color: var(--gray); line-height: 1.5; }
 
 /* ─── CALCULATOR ───────────────────────────────── */
@@ -235,11 +237,11 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 }
 .calc-box .section-title { color: var(--white); margin-bottom: 8px; }
 .calc-box .section-sub { color: rgba(255,255,255,.5); margin-bottom: 36px; }
-.calc-label { font-family: 'Oswald', sans-serif; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 10px; display: block; }
+.calc-label { font-family: 'Unbounded', sans-serif; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 10px; display: block; }
 .service-select {
   width: 100%; padding: 14px 16px; border-radius: 8px;
   background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.15);
-  color: var(--white); font-family: 'Noto Sans', sans-serif; font-size: 1rem;
+  color: var(--white); font-family: 'Mulish', sans-serif; font-size: 1rem;
   margin-bottom: 24px; cursor: pointer; outline: none;
   transition: border-color .2s;
 }
@@ -249,18 +251,18 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 .calc-input {
   flex: 1; padding: 14px 16px; border-radius: 8px;
   background: rgba(255,255,255,.08); border: 1.5px solid rgba(255,255,255,.15);
-  color: var(--white); font-family: 'Noto Sans', sans-serif; font-size: 1rem;
+  color: var(--white); font-family: 'Mulish', sans-serif; font-size: 1rem;
   outline: none; transition: border-color .2s;
 }
 .calc-input:focus { border-color: var(--red); }
 .calc-input::placeholder { color: rgba(255,255,255,.3); }
-.input-unit { display: flex; align-items: center; padding: 14px 16px; background: rgba(255,255,255,.05); border: 1.5px solid rgba(255,255,255,.1); border-radius: 8px; font-family: 'Oswald', sans-serif; color: rgba(255,255,255,.4); font-size: .9rem; white-space: nowrap; }
+.input-unit { display: flex; align-items: center; padding: 14px 16px; background: rgba(255,255,255,.05); border: 1.5px solid rgba(255,255,255,.1); border-radius: 8px; font-family: 'Unbounded', sans-serif; color: rgba(255,255,255,.4); font-size: .9rem; white-space: nowrap; }
 .calc-result {
   background: rgba(232,32,42,.1); border: 1.5px solid rgba(232,32,42,.3);
   border-radius: 12px; padding: 24px; margin-top: 8px;
 }
 .result-label { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 8px; }
-.result-price { font-family: 'Oswald', sans-serif; font-size: 2.4rem; font-weight: 700; color: var(--white); }
+.result-price { font-family: 'Unbounded', sans-serif; font-size: 1.8rem; font-weight: 900; color: var(--white); }
 .result-price span { font-size: 1.1rem; color: rgba(255,255,255,.5); font-weight: 400; }
 .result-note { font-size: .8rem; color: rgba(255,255,255,.4); margin-top: 8px; line-height: 1.5; }
 .calc-cta { margin-top: 24px; width: 100%; justify-content: center; font-size: 1rem; }
@@ -273,9 +275,9 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 }
 .promo-card:hover { box-shadow: 0 8px 28px rgba(26,39,68,.1); }
 .promo-card::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 4px; background: var(--red); }
-.promo-name { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+.promo-name { font-family: 'Unbounded', sans-serif; font-size: .82rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
 .promo-desc { font-size: .88rem; color: var(--gray); line-height: 1.5; }
-.promo-tag { display: inline-block; background: rgba(232,32,42,.08); color: var(--red); font-size: .72rem; letter-spacing: .08em; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+.promo-tag { display: inline-block; background: rgba(232,32,42,.08); color: var(--red); font-size: .72rem; letter-spacing: .08em; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; font-family: 'Unbounded', sans-serif; text-transform: uppercase; }
 
 /* ─── EQUIPMENT ────────────────────────────────── */
 #equipment { padding: 100px 0; background: var(--navy-dark); }
@@ -289,9 +291,9 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 }
 .method-card:hover { background: rgba(232,32,42,.1); border-color: rgba(232,32,42,.3); transform: translateY(-4px); }
 .method-icon { font-size: 2.2rem; margin-bottom: 14px; }
-.method-name { font-family: 'Oswald', sans-serif; font-size: .95rem; color: var(--white); font-weight: 600; }
+.method-name { font-family: 'Unbounded', sans-serif; font-size: .95rem; color: var(--white); font-weight: 600; }
 .preps-block { margin-top: 60px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 40px; }
-.preps-title { font-family: 'Oswald', sans-serif; font-size: 1.3rem; color: var(--white); margin-bottom: 20px; }
+.preps-title { font-family: 'Unbounded', sans-serif; font-size: 1.3rem; color: var(--white); margin-bottom: 20px; }
 .preps-list { display: flex; flex-wrap: wrap; gap: 10px; }
 .prep-tag {
   padding: 8px 16px; border: 1px solid rgba(255,255,255,.15);
@@ -313,12 +315,12 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 }
 .license-badge svg { width: 50px; height: 50px; }
 .license-content { flex: 1; }
-.license-title { font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-.license-num { font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: var(--red); margin-bottom: 16px; letter-spacing: .02em; }
+.license-title { font-family: 'Unbounded', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.license-num { font-family: 'Unbounded', sans-serif; font-size: 1.1rem; color: var(--red); margin-bottom: 16px; letter-spacing: .02em; }
 .license-details { display: flex; flex-wrap: wrap; gap: 24px; }
 .lic-detail { }
 .lic-detail-label { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gray); }
-.lic-detail-val { font-family: 'Oswald', sans-serif; font-size: 1rem; color: var(--navy); font-weight: 500; margin-top: 4px; }
+.lic-detail-val { font-family: 'Unbounded', sans-serif; font-size: 1rem; color: var(--navy); font-weight: 500; margin-top: 4px; }
 .license-check { color: var(--red); display: flex; align-items: center; gap: 8px; font-size: .88rem; margin-top: 16px; }
 
 /* ─── FAQ ───────────────────────────────────────── */
@@ -335,7 +337,7 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
   width: 100%; text-align: left; padding: 22px 24px;
   background: none; border: none; cursor: pointer;
   display: flex; justify-content: space-between; align-items: center; gap: 16px;
-  font-family: 'Noto Sans', sans-serif; font-size: 1rem; font-weight: 500; color: var(--navy);
+  font-family: 'Mulish', sans-serif; font-size: 1rem; font-weight: 500; color: var(--navy);
   transition: background .2s;
 }
 .faq-q:hover { background: var(--light); }
@@ -354,14 +356,14 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 .contact-icon { width: 48px; height: 48px; border-radius: 10px; background: rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .contact-icon svg { width: 22px; height: 22px; color: var(--red); }
 .contact-label { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); }
-.contact-val { font-family: 'Oswald', sans-serif; font-size: 1.1rem; color: var(--white); font-weight: 500; margin-top: 4px; }
+.contact-val { font-family: 'Unbounded', sans-serif; font-size: 1.1rem; color: var(--white); font-weight: 500; margin-top: 4px; }
 .contact-val a { color: inherit; text-decoration: none; }
 .contact-val a:hover { color: var(--red); }
 .messengers { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
 .messenger-btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 10px 18px; border-radius: 8px;
-  font-family: 'Oswald', sans-serif; font-size: .85rem; letter-spacing: .04em; text-transform: uppercase;
+  font-family: 'Unbounded', sans-serif; font-size: .85rem; letter-spacing: .04em; text-transform: uppercase;
   text-decoration: none; transition: all .2s;
 }
 .tg { background: rgba(0,136,204,.15); border: 1px solid rgba(0,136,204,.3); color: #29b6f6; }
@@ -375,13 +377,13 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 .contact-form {
   background: var(--white); border-radius: 20px; padding: 48px;
 }
-.form-title { font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 8px; }
+.form-title { font-family: 'Unbounded', sans-serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 8px; }
 .form-sub { font-size: .9rem; color: var(--gray); margin-bottom: 32px; }
 .form-group { margin-bottom: 18px; }
 .form-group label { display: block; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
 .form-group input, .form-group select, .form-group textarea {
   width: 100%; padding: 14px 16px; border: 1.5px solid var(--border);
-  border-radius: 8px; font-family: 'Noto Sans', sans-serif; font-size: 1rem; color: var(--navy);
+  border-radius: 8px; font-family: 'Mulish', sans-serif; font-size: 1rem; color: var(--navy);
   outline: none; transition: border-color .2s; resize: vertical;
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--navy); }
@@ -396,7 +398,7 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 .footer-logo-row { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; text-decoration: none; }
 .footer-logo-row .logo-name { font-size: 1.4rem; }
 .footer-desc { font-size: .88rem; color: rgba(255,255,255,.4); line-height: 1.6; margin-bottom: 24px; }
-.footer-col-title { font-family: 'Oswald', sans-serif; font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 16px; }
+.footer-col-title { font-family: 'Unbounded', sans-serif; font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 16px; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer-links a { font-size: .9rem; color: rgba(255,255,255,.6); text-decoration: none; transition: color .2s; }
 .footer-links a:hover { color: var(--white); }
@@ -419,7 +421,7 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 @keyframes modalIn { from{opacity:0;transform:scale(.92)} to{opacity:1;transform:scale(1)} }
 .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--gray); font-size: 1.4rem; width: 36px; height: 36px; border-radius: 6px; display: flex; align-items: center; justify-content: center; transition: background .2s; }
 .modal-close:hover { background: var(--light); }
-.modal-title { font-family: 'Oswald', sans-serif; font-size: 1.8rem; color: var(--navy); margin-bottom: 8px; }
+.modal-title { font-family: 'Unbounded', sans-serif; font-size: 1.8rem; color: var(--navy); margin-bottom: 8px; }
 .modal-sub { font-size: .9rem; color: var(--gray); margin-bottom: 32px; }
 .toast { display: none; position: fixed; bottom: 32px; right: 32px; z-index: 3000; background: var(--navy); color: var(--white); padding: 16px 24px; border-radius: 10px; font-size: .95rem; box-shadow: 0 8px 32px rgba(0,0,0,.3); animation: toastIn .3s ease; max-width: 320px; }
 .toast.show { display: block; }
@@ -466,25 +468,9 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
 <header id="header">
   <div class="header-inner">
     <a href="#hero" class="logo-wrap">
-      <svg class="logo-icon" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Shield -->
-        <path d="M26 3L6 11V27C6 38 16 46 26 49C36 46 46 38 46 27V11L26 3Z" fill="#1a2744" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <!-- Hazmat figure -->
-        <circle cx="26" cy="20" r="4.5" fill="white" opacity=".9"/>
-        <rect x="20" y="26" width="12" height="10" rx="3" fill="white" opacity=".9"/>
-        <!-- Sprayer arm -->
-        <line x1="32" y1="29" x2="42" y2="26" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".9"/>
-        <!-- Spray nozzle -->
-        <circle cx="43" cy="25.5" r="1.5" fill="#e8202a"/>
-        <!-- Spray dots -->
-        <circle cx="46" cy="23" r="1" fill="#e8202a" opacity=".7"/>
-        <circle cx="47.5" cy="26" r=".8" fill="#e8202a" opacity=".5"/>
-        <circle cx="45" cy="28" r=".8" fill="#e8202a" opacity=".6"/>
-        <!-- Red accent stripe -->
-        <rect x="6" y="40" width="40" height="3" rx="1.5" fill="#e8202a" opacity=".6"/>
-      </svg>
+      <img src="logo.jpg" alt="КДС логотип" class="logo-icon" style="width:52px;height:52px;object-fit:contain;border-radius:8px;background:#fff;padding:2px;">
       <div class="logo-text">
-        <span class="logo-name">К<span>Д</span>С</span>
+        <span class="logo-name">КДС</span>
         <span class="logo-sub">Служба дезинсекции</span>
       </div>
     </a>
@@ -558,54 +544,10 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
       </div>
     </div>
     <div class="hero-visual reveal-right">
-      <!-- Large KDS Logo SVG -->
-      <svg class="hero-logo-big" viewBox="0 0 360 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Shield outline -->
-        <path d="M180 20L40 70V190C40 270 110 330 180 355C250 330 320 270 320 190V70L180 20Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
-        <!-- Inner shield -->
-        <path d="M180 42L62 84V190C62 258 126 309 180 330C234 309 298 258 298 190V84L180 42Z" fill="rgba(26,39,68,0.6)"/>
-        <!-- Hazmat person body -->
-        <ellipse cx="180" cy="165" rx="38" ry="42" fill="#1a2744"/>
-        <!-- Head / helmet -->
-        <circle cx="180" cy="124" r="22" fill="#1a2744"/>
-        <circle cx="180" cy="124" r="15" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
-        <!-- Visor reflection -->
-        <ellipse cx="175" cy="119" rx="7" ry="5" fill="rgba(255,255,255,0.15)" transform="rotate(-15 175 119)"/>
-        <!-- Suit stripes -->
-        <rect x="158" y="155" width="44" height="4" rx="2" fill="rgba(232,32,42,0.7)"/>
-        <rect x="158" y="175" width="44" height="4" rx="2" fill="rgba(232,32,42,0.5)"/>
-        <!-- Left arm -->
-        <path d="M142 162 L110 180 L105 172" stroke="#1a2744" stroke-width="14" stroke-linecap="round" fill="none"/>
-        <!-- Right arm with sprayer -->
-        <path d="M218 162 L252 152 L260 168" stroke="#1a2744" stroke-width="14" stroke-linecap="round" fill="none"/>
-        <!-- Sprayer gun -->
-        <rect x="252" y="150" width="28" height="12" rx="4" fill="#2d3e6b"/>
-        <rect x="274" y="156" width="16" height="5" rx="2" fill="#e8202a"/>
-        <!-- Spray cloud -->
-        <ellipse cx="308" cy="148" rx="28" ry="22" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
-        <!-- Bug in cloud -->
-        <ellipse cx="308" cy="148" rx="10" ry="8" fill="rgba(232,32,42,0.6)"/>
-        <circle cx="308" cy="146" r="4" fill="rgba(232,32,42,0.8)"/>
-        <!-- Spray particles -->
-        <circle cx="292" cy="142" r="2.5" fill="#e8202a" opacity=".7"/>
-        <circle cx="296" cy="156" r="2" fill="#e8202a" opacity=".5"/>
-        <circle cx="287" cy="150" r="1.5" fill="#e8202a" opacity=".6"/>
-        <!-- Legs -->
-        <rect x="160" y="200" width="16" height="36" rx="8" fill="#1a2744"/>
-        <rect x="184" y="200" width="16" height="36" rx="8" fill="#1a2744"/>
-        <!-- Boots -->
-        <ellipse cx="168" cy="238" rx="12" ry="6" fill="#111c33"/>
-        <ellipse cx="192" cy="238" rx="12" ry="6" fill="#111c33"/>
-        <!-- KDS Text -->
-        <text x="180" y="298" font-family="'Oswald', sans-serif" font-weight="700" font-size="54" fill="white" text-anchor="middle" letter-spacing="6">КДС</text>
-        <!-- Red line -->
-        <rect x="80" y="308" width="200" height="3" rx="1.5" fill="#e8202a"/>
-        <!-- Subtitle -->
-        <text x="180" y="335" font-family="'Noto Sans', sans-serif" font-weight="400" font-size="13" fill="rgba(255,255,255,0.55)" text-anchor="middle" letter-spacing="3">СЛУЖБА ДЕЗИНСЕКЦИИ</text>
-        <!-- Corner shields -->
-        <circle cx="62" cy="84" r="6" fill="rgba(232,32,42,0.5)"/>
-        <circle cx="298" cy="84" r="6" fill="rgba(232,32,42,0.5)"/>
-      </svg>
+      <div class="hero-logo-frame">
+        <img src="logo.jpg" alt="КДС — Служба дезинсекции" class="hero-logo-big">
+        <div class="hero-logo-glow"></div>
+      </div>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1135,16 +1077,9 @@ nav a:hover { color: var(--white); background: rgba(255,255,255,.07); }
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#hero" class="footer-logo-row">
-          <svg width="44" height="44" viewBox="0 0 52 52" fill="none">
-            <path d="M26 3L6 11V27C6 38 16 46 26 49C36 46 46 38 46 27V11L26 3Z" fill="#1a2744" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-            <circle cx="26" cy="20" r="4.5" fill="white" opacity=".8"/>
-            <rect x="20" y="26" width="12" height="10" rx="3" fill="white" opacity=".8"/>
-            <line x1="32" y1="29" x2="42" y2="26" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".8"/>
-            <circle cx="43" cy="25.5" r="1.5" fill="#e8202a"/>
-            <rect x="6" y="40" width="40" height="3" rx="1.5" fill="#e8202a" opacity=".5"/>
-          </svg>
+          <img src="logo.jpg" alt="КДС" style="width:48px;height:48px;object-fit:contain;border-radius:8px;background:#fff;padding:2px;flex-shrink:0;">
           <div class="logo-text">
-            <span class="logo-name" style="font-size:1.3rem;">К<span style="color:#e8202a">Д</span>С</span>
+            <span class="logo-name" style="font-size:1rem;letter-spacing:-.02em;">КДС</span>
             <span class="logo-sub">Служба дезинсекции</span>
           </div>
         </a>
