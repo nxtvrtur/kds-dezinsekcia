@@ -112,6 +112,7 @@ section{padding:100px 80px}
 .stat-item{padding:28px 36px;border-right:1px solid rgba(255,255,255,.07)}
 .stat-item:last-child{border-right:none}
 .stat-num{font-family:var(--f-head);font-size:clamp(1.4rem,3vw,2.8rem);font-weight:900;color:var(--red);line-height:1;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.km-stat{white-space:pre-line;line-height:1.2}
 .stat-txt{font-size:.78rem;color:var(--muted);font-weight:500;line-height:1.4}
 
 /* SERVICES */
@@ -299,6 +300,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
   .stat-item{border:none;border-radius:0;padding:24px 16px;background:var(--ink);min-width:0;overflow:hidden}
   .stat-item:last-child{border:none}
   .stat-num{font-size:clamp(1.3rem,7vw,2rem)}
+  .km-stat{font-size:clamp(1rem,5.5vw,1.4rem)}
   .srv-grid{grid-template-columns:1fr}
   .calc-wrap{grid-template-columns:1fr;gap:36px;padding:28px 20px}
   .offers-grid{grid-template-columns:1fr}
@@ -326,6 +328,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
   .portfolio-item.wide,.portfolio-item.tall{grid-column:span 1;grid-row:span 1}
   .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stat-num{font-size:clamp(1.2rem,7.5vw,1.8rem)}
+  .km-stat{font-size:clamp(0.9rem,5vw,1.2rem)}
 }
 </style>
 </head>
@@ -426,7 +429,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       <div class="stat-txt">выполненных<br>обработок</div>
     </div>
     <div class="stat-item" data-r data-d="3">
-      <div class="stat-num" data-prefix="до " data-count="100" data-suffix=" км">0</div>
+      <div class="stat-num km-stat" data-prefix="до " data-count="100" data-suffix="&#10;км">0</div>
       <div class="stat-txt">от Екатеринбурга<br>выезжаем</div>
     </div>
     <div class="stat-item" data-r data-d="4">
