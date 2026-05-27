@@ -39,7 +39,7 @@ img{max-width:100%;display:block}
 #cur,#cur-ring{pointer-events:none;position:fixed;top:0;left:0;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
 #cur{width:9px;height:9px;background:var(--red);border-radius:50%;transition:width .2s,height .2s,opacity .3s}
 #cur-ring{width:34px;height:34px;border:1.5px solid rgba(232,32,42,.35);border-radius:50%;z-index:9998;transition:width .25s,height .25s,border-color .25s,opacity .3s}
-@media(pointer:coarse){#cur,#cur-ring{display:none}body{cursor:auto}}
+@media(pointer:coarse),(hover:none){#cur,#cur-ring{display:none!important}body{cursor:auto!important}}
 
 /* HEADER */
 header{position:fixed;top:0;left:0;right:0;z-index:900;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
@@ -111,7 +111,7 @@ section{padding:100px 80px}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
 .stat-item{padding:28px 36px;border-right:1px solid rgba(255,255,255,.07)}
 .stat-item:last-child{border-right:none}
-.stat-num{font-family:var(--f-head);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;color:var(--red);line-height:1;margin-bottom:6px;white-space:nowrap}
+.stat-num{font-family:var(--f-head);font-size:clamp(1.4rem,3vw,2.8rem);font-weight:900;color:var(--red);line-height:1;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .stat-txt{font-size:.78rem;color:var(--muted);font-weight:500;line-height:1.4}
 
 /* SERVICES */
@@ -149,19 +149,15 @@ section{padding:100px 80px}
 
 /* PORTFOLIO */
 #portfolio{background:var(--ink)}
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
-.portfolio-item{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;cursor:pointer}
-.portfolio-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.16,1,.3,1)}
-.portfolio-item:hover img{transform:scale(1.06)}
-.portfolio-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,16,31,.85) 0%,transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:24px}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:240px;gap:12px;margin-top:56px}
+.portfolio-item{position:relative;border-radius:12px;overflow:hidden;background:rgba(255,255,255,.04);cursor:pointer}
+.portfolio-item.wide{grid-column:span 2}
+.portfolio-item.tall{grid-row:span 2}
+.portfolio-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.portfolio-item:hover img{transform:scale(1.07)}
+.portfolio-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,16,31,.9) 0%,rgba(8,16,31,.2) 50%,transparent 100%);opacity:0;transition:opacity .35s;display:flex;align-items:flex-end;padding:20px}
 .portfolio-item:hover .overlay{opacity:1}
-.portfolio-item .overlay span{font-family:var(--f-head);font-size:.72rem;font-weight:700;letter-spacing:.04em;color:#fff}
-/* Placeholder cards */
-.portfolio-placeholder{background:rgba(255,255,255,.03);border:1px dashed rgba(255,255,255,.12);border-radius:12px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
-.portfolio-placeholder svg{width:36px;height:36px;stroke:rgba(255,255,255,.2);fill:none;stroke-width:1.5}
-.portfolio-placeholder span{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:500}
-.portfolio-note{margin-top:32px;padding:20px 28px;background:rgba(232,32,42,.07);border:1px solid rgba(232,32,42,.15);border-radius:12px;font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.6}
-.portfolio-note strong{color:var(--red)}
+.portfolio-item .overlay span{font-family:var(--f-head);font-size:.68rem;font-weight:700;letter-spacing:.05em;color:#fff;line-height:1.3}
 
 /* CALC */
 #calc{background:var(--ink)}
@@ -299,14 +295,17 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
   .hero-actions .btn-primary,.hero-actions .btn-ghost{width:100%;text-align:center}
   section,#contacts{padding:60px 20px}
   #stats{padding:40px 20px}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .stat-item{border:1px solid rgba(255,255,255,.07);border-radius:10px}
-  .stat-item:last-child{border:1px solid rgba(255,255,255,.07)}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.07)}
+  .stat-item{border:none;border-radius:0;padding:24px 20px;background:var(--ink)}
+  .stat-item:last-child{border:none}
+  .stat-num{font-size:clamp(1.3rem,7vw,2rem)}
   .srv-grid{grid-template-columns:1fr}
   .calc-wrap{grid-template-columns:1fr;gap:36px;padding:28px 20px}
   .offers-grid{grid-template-columns:1fr}
   .eq-grid{grid-template-columns:1fr}
-  .portfolio-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px;gap:8px}
+  .portfolio-item.wide{grid-column:span 2}
+  .portfolio-item.tall{grid-row:span 1}
   .contacts-grid{grid-template-columns:1fr;gap:40px}
   .footer-grid{grid-template-columns:1fr;gap:28px}
   .footer-bottom{flex-direction:column;align-items:flex-start}
@@ -322,9 +321,11 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
   .contact-form{padding:28px 20px}
 }
 @media(max-width:480px){
-  .hero-title{font-size:clamp(1.5rem,7.5vw,2.2rem)}
-  .portfolio-grid{grid-template-columns:1fr}
+  .hero-title{font-size:clamp(0.85rem,4.2vw,1.4rem)}
+  .portfolio-grid{grid-template-columns:1fr;grid-auto-rows:220px}
+  .portfolio-item.wide,.portfolio-item.tall{grid-column:span 1;grid-row:span 1}
   .stats-grid{grid-template-columns:1fr 1fr}
+  .stat-num{font-size:clamp(1.2rem,7.5vw,1.8rem)}
 }
 </style>
 </head>
@@ -588,35 +589,43 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
   <div class="s-label" data-r>Результаты работ</div>
   <h2 class="s-title" data-r data-d="1">Наши объекты</h2>
   <p class="s-sub" data-r data-d="2">Фотографии с реальных выездов — частные участки, дачи, офисы, рестораны.</p>
-  <div class="portfolio-grid" id="portfolioGrid">
-    <!-- Placeholder cards — заменятся фото когда загрузишь -->
-    <div class="portfolio-placeholder" data-r data-d="1">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-      <span>Фото обработки участка</span>
+  <div class="portfolio-grid">
+    <div class="portfolio-item wide" data-r data-d="1">
+      <img src="photos/photo_2026-05-27_18-39-33.jpg" alt="Выезд бригады на объект">
+      <div class="overlay"><span>Выезд бригады на объект</span></div>
     </div>
-    <div class="portfolio-placeholder" data-r data-d="2">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-      <span>Фото оборудования</span>
+    <div class="portfolio-item tall" data-r data-d="2">
+      <img src="photos/photo_2026-05-27_18-40-23.jpg" alt="Работа выполнена">
+      <div class="overlay"><span>Работа выполнена</span></div>
     </div>
-    <div class="portfolio-placeholder" data-r data-d="3">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-      <span>Фото объекта</span>
+    <div class="portfolio-item" data-r data-d="3">
+      <img src="photos/photo_2026-05-27_18-39-06.jpg" alt="Обработка офисного здания">
+      <div class="overlay"><span>Офисное здание</span></div>
     </div>
-    <div class="portfolio-placeholder" data-r data-d="4">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-      <span>До и после обработки</span>
+    <div class="portfolio-item" data-r data-d="4">
+      <img src="photos/photo_2026-05-27_18-39-21.jpg" alt="Дезинсекция коридора">
+      <div class="overlay"><span>Коридор бизнес-центра</span></div>
     </div>
-    <div class="portfolio-placeholder" data-r data-d="5">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-      <span>Фото специалиста</span>
+    <div class="portfolio-item wide" data-r data-d="1">
+      <img src="photos/photo_2026-05-27_18-39-36.jpg" alt="Обработка большого участка">
+      <div class="overlay"><span>Большой участок — бригадой</span></div>
     </div>
-    <div class="portfolio-placeholder" data-r data-d="6">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
-      <span>Коммерческий объект</span>
+    <div class="portfolio-item tall" data-r data-d="2">
+      <img src="photos/photo_2026-05-27_18-40-26.jpg" alt="Точечная обработка">
+      <div class="overlay"><span>Точечная обработка у дома</span></div>
     </div>
-  </div>
-  <div class="portfolio-note" data-r>
-    <strong>Добавить фотографии:</strong> скиньте фото из Telegram-чата или с телефона — вставим в эту секцию. Форматы JPEG, PNG, HEIC. Чем больше фото — тем больше доверие клиентов.
+    <div class="portfolio-item" data-r data-d="3">
+      <img src="photos/photo_2026-05-27_18-39-27.jpg" alt="Обработка улицы">
+      <div class="overlay"><span>Коттеджный посёлок</span></div>
+    </div>
+    <div class="portfolio-item" data-r data-d="4">
+      <img src="photos/photo_2026-05-27_18-39-30.jpg" alt="Горячий туман">
+      <div class="overlay"><span>Горячий туман — улица</span></div>
+    </div>
+    <div class="portfolio-item" data-r data-d="5">
+      <img src="photos/photo_2026-05-27_18-40-20.jpg" alt="Частный дом">
+      <div class="overlay"><span>Частный дом</span></div>
+    </div>
   </div>
 </section>
 
