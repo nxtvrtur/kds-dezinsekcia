@@ -295,8 +295,8 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
   .hero-actions .btn-primary,.hero-actions .btn-ghost{width:100%;text-align:center}
   section,#contacts{padding:60px 20px}
   #stats{padding:40px 20px}
-  .stats-grid{grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.07)}
-  .stat-item{border:none;border-radius:0;padding:24px 20px;background:var(--ink)}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.07)}
+  .stat-item{border:none;border-radius:0;padding:24px 16px;background:var(--ink);min-width:0;overflow:hidden}
   .stat-item:last-child{border:none}
   .stat-num{font-size:clamp(1.3rem,7vw,2rem)}
   .srv-grid{grid-template-columns:1fr}
@@ -324,7 +324,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
   .hero-title{font-size:clamp(0.85rem,4.2vw,1.4rem)}
   .portfolio-grid{grid-template-columns:1fr;grid-auto-rows:220px}
   .portfolio-item.wide,.portfolio-item.tall{grid-column:span 1;grid-row:span 1}
-  .stats-grid{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stat-num{font-size:clamp(1.2rem,7.5vw,1.8rem)}
 }
 </style>
