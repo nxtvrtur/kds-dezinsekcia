@@ -637,31 +637,16 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
   <div class="s-label" data-r>Стоимость</div>
   <h2 class="s-title" data-r data-d="1">Рассчитайте<br>цену онлайн</h2>
   <div class="calc-wrap" data-r data-d="2">
+    <div class="calc-result" style="text-align:left">
+      <div class="calc-result-label">Стоимость за объект</div>
+      <div id="price">от <strong>500 ₽</strong> <span>до ∞</span></div>
+      <div class="calc-note">Точная цена зависит от площади, степени заражения и вида обработки.<br>Звоните — рассчитаем бесплатно.</div>
+    </div>
     <div class="calc-form">
-      <div>
-        <label for="stype">Вид обработки</label>
-        <select id="stype" onchange="calcPrice()">
-          <option value="ticks">Уничтожение клещей</option>
-          <option value="mosq">Уничтожение комаров</option>
-          <option value="ants">Муравьи, осы, тля</option>
-          <option value="roach">Тараканы и клопы</option>
-          <option value="rats">Дератизация</option>
-          <option value="biz">Пест-контроль для бизнеса</option>
-        </select>
-      </div>
-      <div>
-        <label for="area" id="area-label">Площадь (соток)</label>
-        <input type="number" id="area" min="1" value="10" oninput="calcPrice()">
-      </div>
-      <div class="calc-actions">
+      <div class="calc-actions" style="margin-top:0">
         <button class="btn-primary" onclick="openModal()">Уточнить у специалиста</button>
         <a href="#" class="btn-ghost" style="text-align:center;display:block">Скачать прайс-лист</a>
       </div>
-    </div>
-    <div class="calc-result">
-      <div class="calc-result-label">Примерная стоимость</div>
-      <div id="price">от <strong>1 800</strong> <span>до 2 800 ₽</span></div>
-      <div class="calc-note">Точная цена — после осмотра объекта. Скидки от объёма применяются автоматически.</div>
     </div>
   </div>
 </section>
@@ -680,12 +665,6 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       <div class="offer-badge">Бизнес</div>
       <div class="offer-title">Абонентское обслуживание</div>
       <div class="offer-text">Регулярные обработки по договору. Постоянная защита объекта, скидки, приоритетный выезд и полный пакет документов.</div>
-    </div>
-    <div class="offer-card" data-r data-d="3">
-      <div class="offer-badge">Гарантия</div>
-      <div class="offer-title">Повторный выезд бесплатно</div>
-      <div class="offer-text">Если в течение 7 дней после обработки эффект не достигнут — возвращаемся и обрабатываем повторно без доплат.</div>
-      <div class="offer-guarantee">Гарантия распространяется на все виды обработок</div>
     </div>
   </div>
 </section>
@@ -992,30 +971,6 @@ const co=new IntersectionObserver(entries=>{
 },{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
 
-// --- CALCULATOR ---
-const prices={
-  ticks:{min:1800,max:2800,unit:'соток',perObj:false},
-  mosq:{min:1500,max:2500,unit:'соток',perObj:false},
-  ants:{min:1200,max:2000,unit:'соток',perObj:false},
-  roach:{min:500,unit:'объект',perObj:true},
-  rats:{min:1000,unit:'объект',perObj:true},
-  biz:{min:500,unit:'объект',perObj:true}
-};
-function calcPrice(){
-  const t=document.getElementById('stype').value;
-  const a=parseFloat(document.getElementById('area').value)||0;
-  const p=prices[t];
-  document.getElementById('area-label').textContent='Площадь ('+p.unit+')';
-  if(p.perObj){
-    document.getElementById('price').innerHTML=`от <strong>${p.min.toLocaleString('ru-RU')} ₽</strong> <span>/ объект до ∞</span>`;
-    return;
-  }
-  if(a<=0){document.getElementById('price').innerHTML='Введите площадь';return;}
-  const disc=Math.min(a/100,.2);
-  const lo=Math.round(p.min*(1-disc)*a);
-  const hi=Math.round(p.max*a);
-  document.getElementById('price').innerHTML=`от <strong>${lo.toLocaleString('ru-RU')}</strong> <span>до ${hi.toLocaleString('ru-RU')} ₽</span>`;
-}
 
 // --- FAQ ---
 document.querySelectorAll('.faq-q').forEach(btn=>{
