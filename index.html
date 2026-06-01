@@ -125,6 +125,8 @@ section{padding:100px 80px}
 .srv-icon{width:48px;height:48px;background:rgba(232,32,42,.1);border:1px solid rgba(232,32,42,.2);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:background .3s,transform .3s}
 .srv-icon svg{width:24px;height:24px;fill:none;stroke:var(--red);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .srv-card:hover .srv-icon{background:rgba(232,32,42,.18);transform:scale(1.08)}
+.srv-order{margin-top:22px;background:transparent;border:1px solid rgba(232,32,42,.45);color:var(--red);font-family:var(--f-head);font-size:.68rem;font-weight:700;letter-spacing:.06em;padding:10px 22px;border-radius:50px;cursor:pointer;transition:background .2s,color .2s}
+.srv-order:hover{background:var(--red);color:#fff}
 .srv-name{font-family:var(--f-head);font-size:.88rem;font-weight:800;line-height:1.25;margin-bottom:10px}
 .srv-desc{font-size:.82rem;color:var(--muted);line-height:1.6}
 .srv-price{margin-top:18px;font-family:var(--f-head);font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.04em}
@@ -454,6 +456,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       <div class="srv-name">Уничтожение клещей</div>
       <div class="srv-desc">Обработка участков от иксодовых клещей холодным и горячим туманом. Защита на весь сезон.</div>
       <div class="srv-price">от 1 800 ₽/сотка</div>
+      <button class="srv-order" onclick="openModalWith('Уничтожение клещей')">Заказать</button>
     </div>
     <div class="srv-card" data-r data-d="2">
       <div class="srv-icon">
@@ -463,6 +466,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       <div class="srv-name">Уничтожение комаров</div>
       <div class="srv-desc">Обработка водоёмов, кустарников и зон отдыха. Длительный эффект без запаха.</div>
       <div class="srv-price">от 1 500 ₽/сотка</div>
+      <button class="srv-order" onclick="openModalWith('Уничтожение комаров')">Заказать</button>
     </div>
     <div class="srv-card" data-r data-d="3">
       <div class="srv-icon">
@@ -472,6 +476,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       <div class="srv-name">Муравьи, осы, тля</div>
       <div class="srv-desc">Уничтожение муравейников, гнёзд ос, обработка растений от тли профессиональными препаратами.</div>
       <div class="srv-price">от 1 200 ₽/сотка</div>
+      <button class="srv-order" onclick="openModalWith('Муравьи, осы, тля')">Заказать</button>
     </div>
     <div class="srv-card" data-r data-d="4">
       <div class="srv-icon">
@@ -481,6 +486,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       <div class="srv-name">Тараканы и клопы</div>
       <div class="srv-desc">Дезинсекция жилых и нежилых помещений. Гели, ловушки, холодный туман. Результат с первой обработки.</div>
       <div class="srv-price">от 2 500 ₽/объект</div>
+      <button class="srv-order" onclick="openModalWith('Тараканы и клопы')">Заказать</button>
     </div>
     <div class="srv-card" data-r data-d="5">
       <div class="srv-icon">
@@ -490,6 +496,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       <div class="srv-name">Дератизация</div>
       <div class="srv-desc">Уничтожение крыс и мышей. Брикеты, ловушки, технология приманочных станций.</div>
       <div class="srv-price">от 1 000 ₽/объект</div>
+      <button class="srv-order" onclick="openModalWith('Дератизация')">Заказать</button>
     </div>
     <div class="srv-card" data-r data-d="6">
       <div class="srv-icon">
@@ -499,6 +506,7 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       <div class="srv-name">Пест-контроль для бизнеса</div>
       <div class="srv-desc">Абонентское обслуживание с заключением договора. Полный пакет документов для проверок.</div>
       <div class="srv-price">от 2 000 ₽/объект</div>
+      <button class="srv-order" onclick="openModalWith('Пест-контроль для бизнеса')">Заказать</button>
     </div>
   </div>
 </section>
@@ -1013,6 +1021,11 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 
 // --- MODAL ---
 function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function openModalWith(service){
+  openModal();
+  const sel=document.querySelector('#modal select');
+  if(sel){[...sel.options].forEach(o=>{if(o.text===service)sel.value=o.value;});}
+}
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
 
 // --- TELEGRAM FORM ---
