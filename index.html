@@ -1034,20 +1034,17 @@ const TG_TOKEN='8544815053:AAFL7OjJuokW7I-5zsb-x-m4_IxkEDubQKU';
 const TG_CHAT='765777598';
 
 function submitForm(btn,isModal){
-  const wrap=btn.closest('.contact-form,.modal-box');
-  const fields=wrap?wrap.querySelectorAll('.form-field'):[];
-  let lines=['🦟 Новая заявка с сайта КДС'];
-  fields.forEach(field=>{
-    const lbl=field.querySelector('label');
-    const inp=field.querySelector('input,select,textarea');
-    if(!inp||!inp.value.trim())return;
-    const name=lbl?lbl.textContent.trim():inp.placeholder||'';
-    let val=inp.value.trim();
-    if(inp.tagName==='SELECT'&&inp.selectedOptions[0]) val=inp.selectedOptions[0].text;
-    lines.push('• '+name+': '+val);
-  });
-  const text=encodeURIComponent(lines.join('\n'));
-  fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage?chat_id='+TG_CHAT+'&text='+text)
+  const c=btn.closest('.contact-form,.modal-box');
+  const v=function(sel){return(c&&c.querySelector(sel))?c.querySelector(sel).value.trim():'';};
+  const svc=function(sel){const s=c&&c.querySelector(sel);return s?s.options[s.selectedIndex].text:'';};
+  const text=[
+    '🦟 Новая заявка с сайта КДС',
+    '• Имя: '+(v('input[type=text]')||'—'),
+    '• Телефон: '+(v('input[type=tel]')||'—'),
+    '• Услуга: '+(svc('select')||'—'),
+    '• Комментарий: '+(v('textarea')||'—')
+  ].join('\n');
+  fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage?chat_id='+TG_CHAT+'&text='+encodeURIComponent(text))
     .catch(()=>{});
   btn.textContent='✓ Отправлено!';
   btn.disabled=true;
