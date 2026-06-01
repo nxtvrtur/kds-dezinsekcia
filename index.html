@@ -1034,21 +1034,22 @@ const TG_TOKEN='8544815053:AAFL7OjJuokW7I-5zsb-x-m4_IxkEDubQKU';
 const TG_CHAT='765777598';
 
 function submitForm(btn,isModal){
-  const form=btn.closest('form,.contact-form,[class*=form]');
-  const inputs=form?form.querySelectorAll('input,select,textarea'):[];
-  let lines=['🦟 <b>Новая заявка с сайта КДС</b>'];
-  inputs.forEach(el=>{
-    if(el.type==='submit'||el.type==='button')return;
-    const lbl=el.previousElementSibling?.textContent||el.placeholder||el.name||'';
-    if(el.value.trim()) lines.push(`• ${lbl}: ${el.value.trim()}`);
+  const wrap=btn.closest('.contact-form,.modal-box');
+  const fields=wrap?wrap.querySelectorAll('.form-field'):[];
+  let lines=['🦟 Новая заявка с сайта КДС'];
+  fields.forEach(field=>{
+    const lbl=field.querySelector('label');
+    const inp=field.querySelector('input,select,textarea');
+    if(!inp||!inp.value.trim())return;
+    const name=lbl?lbl.textContent.trim():inp.placeholder||'';
+    let val=inp.value.trim();
+    if(inp.tagName==='SELECT'&&inp.selectedOptions[0]) val=inp.selectedOptions[0].text;
+    lines.push('• '+name+': '+val);
   });
-  const text=lines.join('\n');
-  fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`,{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({chat_id:TG_CHAT,text,parse_mode:'HTML'})
-  }).catch(()=>{});
-  btn.textContent='✓ Заявка отправлена!';
+  const text=encodeURIComponent(lines.join('\n'));
+  fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage?chat_id='+TG_CHAT+'&text='+text)
+    .catch(()=>{});
+  btn.textContent='✓ Отправлено!';
   btn.disabled=true;
   setTimeout(()=>{
     if(isModal)closeModal();
