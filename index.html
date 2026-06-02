@@ -130,6 +130,12 @@ section{padding:100px 80px}
 .srv-name{font-family:var(--f-head);font-size:.88rem;font-weight:800;line-height:1.25;margin-bottom:10px}
 .srv-desc{font-size:.82rem;color:var(--muted);line-height:1.6}
 .srv-price{margin-top:18px;font-family:var(--f-head);font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.04em}
+.price-tiers{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.price-tier{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 12px}
+.price-tier-label{font-size:.6rem;color:var(--muted);line-height:1.3;margin-bottom:4px}
+.price-tier-val{font-family:var(--f-head);font-size:.72rem;font-weight:700;color:#fff}
+.price-tier.accent{background:rgba(26,39,68,.6);border-color:rgba(232,32,42,.3)}
+.price-tier.accent .price-tier-val{color:var(--red)}
 
 /* WHY */
 #why{padding:0;display:grid;grid-template-columns:1fr 1fr}
@@ -466,7 +472,12 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       </div>
       <div class="srv-name">Уничтожение клещей</div>
       <div class="srv-desc">Обработка участков от иксодовых клещей холодным и горячим туманом. Защита на весь сезон.</div>
-      <div class="srv-price">от 200 ₽/сотка</div>
+      <div class="price-tiers">
+        <div class="price-tier"><div class="price-tier-label">Садовые тов.</div><div class="price-tier-val">от 200 ₽/сотка</div></div>
+        <div class="price-tier accent"><div class="price-tier-label">Частное жильё</div><div class="price-tier-val">от 180 ₽/сотка</div></div>
+        <div class="price-tier accent"><div class="price-tier-label">Комплекс</div><div class="price-tier-val">от 230 ₽/сотка</div></div>
+        <div class="price-tier"><div class="price-tier-label">Юридические лица</div><div class="price-tier-val">от 70 ₽/сотка</div></div>
+      </div>
       <button class="srv-order" onclick="openModalWith('Уничтожение клещей')">Заказать</button>
     </div>
     <div class="srv-card" data-r data-d="2">
@@ -496,7 +507,12 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       </div>
       <div class="srv-name">Тараканы и клопы</div>
       <div class="srv-desc">Холодный туман, орошение, гелевая обработка. Жилые и нежилые помещения. Результат с первой обработки.</div>
-      <div class="srv-price">от 2 500 ₽/услуга</div>
+      <div class="price-tiers">
+        <div class="price-tier"><div class="price-tier-label">Холодный туман</div><div class="price-tier-val">от 3 000 ₽</div></div>
+        <div class="price-tier accent"><div class="price-tier-label">Орошение</div><div class="price-tier-val">от 2 500 ₽</div></div>
+        <div class="price-tier accent"><div class="price-tier-label">Гелевая обработка</div><div class="price-tier-val">от 3 500 ₽</div></div>
+        <div class="price-tier"><div class="price-tier-label">Юридические лица</div><div class="price-tier-val">от 1 000 ₽</div></div>
+      </div>
       <button class="srv-order" onclick="openModalWith('Тараканы и клопы')">Заказать</button>
     </div>
     <div class="srv-card" data-r data-d="5">
@@ -506,7 +522,11 @@ footer{padding:56px 80px;background:rgba(0,0,0,.35);border-top:1px solid rgba(25
       </div>
       <div class="srv-name">Дератизация</div>
       <div class="srv-desc">Уничтожение крыс и мышей. Брикеты, ловушки, приманочные станции. Квартиры, частный дом, юрлица.</div>
-      <div class="srv-price">от 2 000 ₽/объект</div>
+      <div class="price-tiers">
+        <div class="price-tier accent"><div class="price-tier-label">Квартиры</div><div class="price-tier-val">от 2 000 ₽</div></div>
+        <div class="price-tier accent"><div class="price-tier-label">Частное жильё</div><div class="price-tier-val">от 2 200 ₽</div></div>
+        <div class="price-tier"><div class="price-tier-label">Юридические лица</div><div class="price-tier-val">от 1 000 ₽</div></div>
+      </div>
       <button class="srv-order" onclick="openModalWith('Дератизация')">Заказать</button>
     </div>
     <div class="srv-card" data-r data-d="6">
